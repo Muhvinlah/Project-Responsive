@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="./css/bootstrap.css">
     </head>
     <body>
-        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle" style="z-index: 1000;">
+        <div class="z-3 dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
             <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center"
                     id="bd-theme"
                     type="button"
@@ -36,7 +36,7 @@
                     <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-moon-stars-fill me-2 opacity-50" viewBox="0 0 16 16">
                             <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
-                            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+                            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.50 rounded8.774c.115.346.386.617.732.732l.774.50 rounded8a.145.145 0 0 1 0 .274l-.774.50 rounded8a1.16 1.16 0 0 0-.732.732l-.50 rounded8.774a.145.145 0 0 1-.274 0l-.50 rounded8-.774a1.16 1.16 0 0 0-.732-.732l-.774-.50 rounded8a.145.145 0 0 1 0-.274l.774-.50 rounded8c.346-.115.617-.386.732-.732z"/>
                             <use href="#moon-stars-fill"></use>
                         </svg>
                         Dark
@@ -55,7 +55,7 @@
         </div>
 
         <div class="container">
-            <header class="border-white border-bottom py-3">
+            <header class="border-bottom border-2 py-3">
                 <div class="row flex-wrap justify-content-between align-items-center">
                     <div class="col-sm-1">
                         <a class="btn btn-primary" href="#">Sign Up</a>
@@ -71,12 +71,12 @@
                     <div class="col-4 d-flex justify-content-end align-items-center">
                         <a class="btn" href="https://twitter.com/?lang=en">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.50 roundedh-4.937l-3.867-5.07-4.450 rounded 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
                             </svg>
                         </a>
                         <a class="btn" href="https://id-id.facebook.com/">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.650 roundedh-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.50 rounded8v1.51h2.218l-.354 2.326H9.50 roundedV16c3.824-.604 6.75-3.934 6.75-7.951"/>
                             </svg>
                         </a>
                         <a class="btn" href="https://www.youtube.com/">
@@ -87,99 +87,189 @@
                     </div>
                 </div>
             </header>
-            <div class="nav-scroller py-1 mb-3 border-bottom border-white">
+            <div class="nav-scroller py-1 mb-3 border-bottom border-2">
                 <nav class="nav nav-underline justify-content-between text-capitalize">
                   <a class="nav-item nav-link link-body-emphasis" href="otomotif.html">otomotif</a>
                   <a class="nav-item nav-link link-body-emphasis" href="politik.html">politik</a>
                   <a class="nav-item nav-link link-body-emphasis" href="hiburan.html">hiburan</a>
-                  <a class="nav-item nav-link link-body-emphasis" href="berita.html">berita</a>
                   <a class="nav-item nav-link link-body-emphasis" href="teknologi.html">teknologi</a>
                   <a class="nav-item nav-link link-body-emphasis" href="sepakbola.html">sepakbola</a>
                   <a class="nav-item nav-link link-body-emphasis" href="kesehatan.html">kesehatan</a>
                   <a class="nav-item nav-link link-body-emphasis" href="wisata.html">wisata</a>
                 </nav>
             </div>
-            <div class="border-top py-4 border-white"></div>
+            <div class="border-top border-2"></div>
         </div>
+
         <main class="container">
-            <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/timnas.jpg" class="d-block w-100" alt="Slide 1">
-                        <div class="carousel-caption text-start bg-dark bg-opacity-25 text-white">
-                            <h1>Timnas Gagal Tembus ke Final</h1>
-                            <p>Timnas kita harus menerima kenyataan pahit setelah gagal lolos ke final afc u23 mengalami kekalahan 2-0 melawan Uzbekistan</p>
-                        </div>
+            <div class="row">
+                <div id="myCarousel" class="carousel slide p-3" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/pombensin.jpg" class="d-block w-100" alt="Slide 2">
-                        <div class="container">
-                            <div class="carousel-caption text-start">
-                                <h1>Pertamina Mengeluarkan Jenis Bahan Bakar Baru Yaitu Pertamax Green</h1>
-                                <p>PT Pertamina Patra Niaga, Subholding Commercial & Trading Pertamina, mengungkapkan bahwa sejak diluncurkan produk Bahan Bakar Minyak (BBM) 'hijau' berbasis tetesan tebu (molase) alias Pertamax Green 95 pada Juni 2023 lalu, sudah banyak warga yang mengonsumsinya.</p>
+                    <div class="carousel-inner rounded-3">
+                        <div class="carousel-item active">
+                            <img src="img/timnas.jpg" class="d-block w-100" alt="Slide 1">
+                            <div class="carousel-caption text-start bg-light bg-opacity-50 rounded">
+                                <h3 class="fw-bold">Timnas Gagal Tembus ke Final</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/korban.jpeg" class="d-block w-100" alt="Slide 3">
-                        <div class="container">
-                            <div class="carousel-caption text-start">
-                                <h1>RM Dibunuh, Mayatnya Dimasukkan ke Koper lalu Dibuang ke Pinggir Jalan di Cikarang</h1>
-                                <p>Kasus penemuan jasad wanita berinisial RM (50) di dalam koper hitam yang diletakkan di pinggir Jalan Kalimalang, Desa Sukadanu, Cikarang Barat, Kabupaten Bekasi, akhirnya terungkap.</p>
+                        <div class="carousel-item">
+                            <img src="img/pombensin.jpg" class="d-block w-100" alt="Slide 2">
+                            <div class="container">
+                                <div class="carousel-caption text-start bg-light bg-opacity-50 rounded">
+                                    <h3 class="fw-bold">Pertamina Mengeluarkan Jenis Bahan Bakar Baru Yaitu Pertamax Green</h3>
+                                </div>
                             </div>
                         </div>
+                        <div class="carousel-item">
+                            <img src="img/korban.jpeg" class="d-block w-100" alt="Slide 3">
+                            <div class="container">
+                                <div class="carousel-caption text-start bg-light bg-opacity-50 rounded">
+                                    <h3 class="fw-bold">RM Dibunuh, Mayatnya Dimasukkan ke Koper lalu Dibuang ke Pinggir Jalan di Cikarang</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
-            
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            
-            <div class="row" style="margin-top: 50px;">
-                <div class="col-md-8 border-end border-3 border-bottom"> <!-- Menambahkan class border-bottom -->
-                    <div class="px-0 p-md-5 rounded text-body-emphasis">
+
+                <div class="col-md-8">
+                    <article class="blog-post p-md-5 text-body-emphasis">
                         <img src="img/erupsi.jpg" class="img-fluid" alt="erupsi">
-                        <h1 class="display-4 fst-italic">Gunung Ruang Kembali Erupsi, Warga Tagulandang Mengungsi</h1>
-                        <p class="lead my-3">Provinsi Sulawesi Utara kembali mengalami erupsi pada Selasa (30/4/2024) dini hari.
+                        <h1 class="display-4 fst-italic text-capitalize">gunung ruang kembali erupsi, warga tagulandang mengungsi</h1>
+                        <p class="lead my-3">
+                            Provinsi Sulawesi Utara kembali mengalami erupsi pada Selasa (30/4/2024) dini hari.
                             Gunung Ruang mengelurkan material vulkanik sekitar pukul 02.35 WITA.
-                            Letusan ini mengakibatkan warga Tagulandang, Sulawesi Utara kembali mengungsi setelah sebelumnya telah kembali ke rumah.</p>
-                        <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
-                    </div>
-                </div>
-                
-                <div class="col-md-8 border-end border-3">
-                    <div class="px-0 p-md-5 rounded text-body-emphasis">
+                            Letusan ini mengakibatkan warga Tagulandang, Sulawesi Utara kembali mengungsi setelah sebelumnya telah kembali ke rumah.
+                        </p>
+                    </article>
+                    <article class="blog-post p-md-5 text-body-emphasis">
                         <img src="img/erupsi.jpg" class="img-fluid" alt="erupsi">
-                        <h1 class="display-4 fst-italic">Gunung Ruang Kembali Erupsi, Warga Tagulandang Mengungsi</h1>
-                        <p class="lead my-3">Provinsi Sulawesi Utara kembali mengalami erupsi pada Selasa (30/4/2024) dini hari.
+                        <h1 class="display-4 fst-italic text-capitalize">gunung ruang kembali erupsi, warga tagulandang mengungsi</h1>
+                        <p class="lead my-3">
+                            Provinsi Sulawesi Utara kembali mengalami erupsi pada Selasa (30/4/2024) dini hari.
                             Gunung Ruang mengelurkan material vulkanik sekitar pukul 02.35 WITA.
-                            Letusan ini mengakibatkan warga Tagulandang, Sulawesi Utara kembali mengungsi setelah sebelumnya telah kembali ke rumah.</p>
-                        <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
-                    </div>
+                            Letusan ini mengakibatkan warga Tagulandang, Sulawesi Utara kembali mengungsi setelah sebelumnya telah kembali ke rumah.
+                        </p>
+                    </article>
+                    <article class="blog-post p-md-5 text-body-emphasis">
+                        <img src="img/erupsi.jpg" class="img-fluid" alt="erupsi">
+                        <h1 class="display-4 fst-italic text-capitalize">gunung ruang kembali erupsi, warga tagulandang mengungsi</h1>
+                        <p class="lead my-3">
+                            Provinsi Sulawesi Utara kembali mengalami erupsi pada Selasa (30/4/2024) dini hari.
+                            Gunung Ruang mengelurkan material vulkanik sekitar pukul 02.35 WITA.
+                            Letusan ini mengakibatkan warga Tagulandang, Sulawesi Utara kembali mengungsi setelah sebelumnya telah kembali ke rumah.
+                        </p>
+                    </article>
+                    <article class="blog-post p-md-5 text-body-emphasis">
+                        <img src="img/erupsi.jpg" class="img-fluid" alt="erupsi">
+                        <h1 class="display-4 fst-italic text-capitalize">gunung ruang kembali erupsi, warga tagulandang mengungsi</h1>
+                        <p class="lead my-3">
+                            Provinsi Sulawesi Utara kembali mengalami erupsi pada Selasa (30/4/2024) dini hari.
+                            Gunung Ruang mengelurkan material vulkanik sekitar pukul 02.35 WITA.
+                            Letusan ini mengakibatkan warga Tagulandang, Sulawesi Utara kembali mengungsi setelah sebelumnya telah kembali ke rumah.
+                        </p>
+                    </article>
+                    <article class="blog-post p-md-5 text-body-emphasis">
+                        <img src="img/erupsi.jpg" class="img-fluid" alt="erupsi">
+                        <h1 class="display-4 fst-italic text-capitalize">gunung ruang kembali erupsi, warga tagulandang mengungsi</h1>
+                        <p class="lead my-3">
+                            Provinsi Sulawesi Utara kembali mengalami erupsi pada Selasa (30/4/2024) dini hari.
+                            Gunung Ruang mengelurkan material vulkanik sekitar pukul 02.35 WITA.
+                            Letusan ini mengakibatkan warga Tagulandang, Sulawesi Utara kembali mengungsi setelah sebelumnya telah kembali ke rumah.
+                        </p>
+                    </article>
                 </div>
+
                 <div class="col-md-4">
-                    <div class="p-4 mb-3 bg-body-tertiary rounded">
-                        <h4 class="fst-italic">About</h4>
-                        <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
-                    </div>
-                    <div class="p-4 mb-3 bg-body-tertiary rounded">
-                        <h4 class="fst-italic">About</h4>
-                        <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
-                    </div>
-                    <div class="p-4 mb-3 bg-body-tertiary rounded">
-                        <h4 class="fst-italic">About</h4>
-                        <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+                    <div class="sticky-top pt-5">                  
+                        <div class="text-capitalize">
+                            <h4 class="fst-italic">trending</h4>
+                            <ul class="list-unstyled">
+                                <li>    
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">trending</h6>
+                                        <small class="text-body-light">maret 29, 2024</small>
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">trending</h6>
+                                        <small class="text-body-light">maret 29, 2024</small>
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">trending</h6>
+                                        <small class="text-body-light">maret 30, 2024</small>
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>    
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">trending</h6>
+                                        <small class="text-body-light">maret 30, 2024</small>
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">trending</h6>
+                                        <small class="text-body-light">mei 1, 2024</small>
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">trending</h6>
+                                        <small class="text-body-light">mei 2, 2024</small>
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>    
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">trending</h6>
+                                        <small class="text-body-light">mei 2, 2024</small>
+                                    </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">trending</h6>
+                                        <small class="text-body-light">mei 2, 2024</small>
+                                    </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
