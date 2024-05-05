@@ -8,6 +8,22 @@
         <script src="./js/bootstrap.bundle.js"></script>
         <link rel="stylesheet" href="./css/bootstrap.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        <style>
+            @media (max-width: 768px) {
+                .signin {
+                    display: none;
+                }
+                .date {
+                    display: none;
+                }
+                .logo {
+                    text-align: left !important;
+                }
+                h3 {
+                    font-size: 0.8rem;
+                }
+            }
+        </style>
     </head>
     <body>
         <div class="z-3 dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
@@ -57,12 +73,12 @@
 
         <div class="container">
             <header class="border-bottom border-2 py-3">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-sm">
-                        <a class="btn btn-primary text-truncate" href="#">Sign In</a>
+                <div class="flex-row d-flex flex-wrap align-items-center justify-content-between">
+                    <div class="p-3 clearfix signin">
+                        <a class="btn btn-primary" href="#">Sign In</a>
                     </div>
-                    <div class="col-sm text-center">
-                        <p class="text-capitalize text-body-emphasis text-decoration-none" id="date"></p>
+                    <div class="flex-fill text-center pt-3 clearfix date">
+                        <p class="text-capitalize lead" id="date"></p>
                         <script>
                             window.onload = setInterval(clock,1000);
                             function clock()
@@ -77,12 +93,12 @@
                             }
                         </script>
                     </div>
-                    <div class="col-md">
+                    <div class="flex-fill text-center logo">
                         <a href="index.html">
-                            <img src="img/NTlogo.png" alt="logo">
+                            <img src="img/NTLogo.png" alt="logo" class="img-fluid w-50">
                         </a>
                     </div>
-                    <div class="col-sm d-flex justify-content-end align-items-center">
+                    <div class="flex-fill d-flex justify-content-end align-items-center clearfix">
                         <a class="btn" href="https://twitter.com/?lang=en">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
                                 <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
@@ -102,15 +118,15 @@
                 </div>
             </header>
             <div class="nav-scroller px-2 py-1 mb-3 border-bottom border-2">
-                <nav class="nav nav-underline justify-content-between text-capitalize">
-                  <a class="nav-item nav-link link-body-emphasis" href="otomotif.html">otomotif</a>
-                  <a class="nav-item nav-link link-body-emphasis" href="politik.html">politik</a>
-                  <a class="nav-item nav-link link-body-emphasis" href="hiburan.html">hiburan</a>   
-                  <a class="nav-item nav-link link-body-emphasis" href="teknologi.html">teknologi</a>
-                  <a class="nav-item nav-link link-body-emphasis" href="sepakbola.html">sepakbola</a>
-                  <a class="nav-item nav-link link-body-emphasis" href="kesehatan.html">kesehatan</a>
-                  <a class="nav-item nav-link link-body-emphasis" href="wisata.html">wisata</a>
-                </nav>
+                <div class="d-flex nav-underline justify-content-between text-capitalize overflow-x-auto">
+                    <a class="nav-item nav-link link-body-emphasis" href="otomotif.html">otomotif</a>
+                    <a class="nav-item nav-link link-body-emphasis" href="politik.html">politik</a>
+                    <a class="nav-item nav-link link-body-emphasis" href="hiburan.html">hiburan</a>
+                    <a class="nav-item nav-link link-body-emphasis" href="teknologi.html">teknologi</a>
+                    <a class="nav-item nav-link link-body-emphasis" href="sepakbola.html">sepakbola</a>
+                    <a class="nav-item nav-link link-body-emphasis" href="kesehatan.html">kesehatan</a>
+                    <a class="nav-item nav-link link-body-emphasis" href="wisata.html">wisata</a>
+                </div>
             </div>
             <div class="border-top border-2"></div>
         </div>
@@ -215,7 +231,7 @@
                     </article>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <div class="sticky-top pt-5">                  
                         <div class="text-capitalize">
                             <h4 class="fst-italic">trending</h4>
@@ -310,24 +326,21 @@
                                 </h5>
                                 <p>Dapatkan berita menarik dan up to date dengan terus mengikuti berita berita kami</p>
                             </div>
-                            <hr class="w-100 clearfix d-md-none" />
                             <div class="col-md-2 mx-auto mt-3">
-                                <h6 class="text-uppercase mb-4 font-weight-bold">topik</h6>
+                                <h6 class="text-uppercase mb-4 fw-bold">topik</h6>
                                 <p><a class="nav-item nav-link link-body-emphasis" href="otomotif.html">Otomotif</a></p>
                                 <p><a class="nav-item nav-link link-body-emphasis" href="politik.html">Politik</a></p>
                                 <p><a class="nav-item nav-link link-body-emphasis" href="hiburan.html">Hiburan</a></p>
                                 <p><a class="nav-item nav-link link-body-emphasis" href="teknologi.html">Teknologi</a></p>
                             </div>
-                            <hr class="w-100 clearfix d-md-none"/>
                             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                                <h6 class="text-uppercase mb-4 font-weight-bold invisible">Other Topic</h6>
+                                <h6 class="text-uppercase mb-4 fw-bold">topik lainnya</h6>
                                 <p><a class="nav-item nav-link link-body-emphasis" href="sepakbola.html">Sepak Bola</a></p>
                                 <p><a class="nav-item nav-link link-body-emphasis" href="kesehatan.html">Kesehatan</a></p>
                                 <p><a class="nav-item nav-link link-body-emphasis" href="wisata.html">Wisata</a></p>
                             </div>
-                            <hr class="w-100 clearfix d-md-none" />
                             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                                <h6 class="text-uppercase mb-4 fw-bold">Contact</h6>
                                 <p><i class="fas fa-home mr-3"></i> Depok, Jawa Barat, Indonesia</p>
                                 <p><i class="fas fa-envelope mr-3"></i> nusantaratimes@gmail.com</p>
                                 <p><i class="fas fa-phone mr-3"></i> + 62 823 5675 7887</p>

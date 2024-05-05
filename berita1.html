@@ -8,6 +8,19 @@
         <script src="./js/bootstrap.bundle.js"></script>
         <link rel="stylesheet" href="./css/bootstrap.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        <style>
+            @media (max-width: 768px) {
+                .signin {
+                    display: none;
+                }
+                .date {
+                    display: none;
+                }
+                .logo {
+                    text-align: left !important;
+                }
+            }
+        </style>
     </head>
     <body>
         <div class="z-3 dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
@@ -56,12 +69,12 @@
         </div>
         <div class="container">
             <header class="border-bottom border-2 py-3">
-                <div class="row flex-wrap justify-content-between align-items-center">
-                    <div class="col-sm-1">
-                        <a class="btn btn-primary" href="#">Sign Up</a>
+                <div class="flex-row d-flex flex-wrap align-items-center justify-content-between">
+                    <div class="p-3 clearfix signin">
+                        <a class="btn btn-primary" href="#">Sign In</a>
                     </div>
-                    <div class="col-2 text-center">
-                        <p class="text-capitalize text-body-emphasis text-decoration-none" id="date"></p>
+                    <div class="flex-fill text-center pt-3 clearfix date">
+                        <p class="text-capitalize lead" id="date"></p>
                         <script>
                             window.onload = setInterval(clock,1000);
                             function clock()
@@ -76,12 +89,12 @@
                             }
                         </script>
                     </div>
-                    <div class="col-4">
+                    <div class="flex-grow-1 w-25">
                         <a href="index.html">
-                            <img src="img/NTlogo.png" alt="logo">
+                            <img src="img/NTLogo.png" alt="logo" class="img-fluid">
                         </a>
                     </div>
-                    <div class="col-4 d-flex justify-content-end align-items-center">
+                    <div class="flex-fill d-flex justify-content-end align-items-center clearfix">
                         <a class="btn" href="https://twitter.com/?lang=en">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
                                 <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
@@ -101,7 +114,7 @@
                 </div>
             </header>
             <div class="nav-scroller px-2 py-1 mb-3 border-bottom border-2">
-                <nav class="nav nav-underline justify-content-between text-capitalize">
+                <div class="d-flex nav-underline justify-content-between text-capitalize overflow-x-auto">
                   <a class="nav-item nav-link link-body-emphasis active">otomotif</a>
                   <a class="nav-item nav-link link-body-emphasis" href="politik.html">politik</a>
                   <a class="nav-item nav-link link-body-emphasis" href="hiburan.html">hiburan</a>
@@ -109,15 +122,14 @@
                   <a class="nav-item nav-link link-body-emphasis" href="sepakbola.html">sepakbola</a>
                   <a class="nav-item nav-link link-body-emphasis" href="kesehatan.html">kesehatan</a>
                   <a class="nav-item nav-link link-body-emphasis" href="wisata.html">wisata</a>
-                </nav>
+                </div>
             </div>
             <div class="border-top border-2"></div>
         </div>
 
         <main class="container">
             <div class="row">
-                <div class="col-sm"></div>
-                <div class="col-md">
+                <div class="col-lg-8 p-3">
                     <figure>
                         <h2 class="text-xl text-capitalize fw-bold pt-5">
                             peugeot cabut dari indonesia, bengkel spesialis siap tampung
@@ -127,7 +139,7 @@
                         </figcaption>
                     </figure>
                     <div class="text-center py-5">
-                        <img src="img/peugeot.jpg" class=" text-center" alt="Peugeot">
+                        <img src="img/peugeot.jpg" alt="Peugeot" class="img-fluid">
                     </div>
                     <p>
                         Peugeot memutuskan untuk pamit dari pasar otomotif Indonesia. Meski demikian aktivitas purna jual masih berjalan seperti biasa dan belum ada konfirmasi soal suku cadang.
@@ -152,7 +164,7 @@
                         "Kenapa karena mesin sudah mesin modern, secara teknis kami butuh ilmunya kedua itu secara perlengkapan biasanya ada special tools," kata Hadi.
                     </p>
                 </div>
-                <div class="col-sm"></div>
+                <div class="col"></div>
             </div>
         </main>
 
@@ -167,7 +179,6 @@
                             </h5>
                             <p>Dapatkan berita menarik dan up to date dengan terus mengikuti berita berita kami</p>
                         </div>
-                        <hr class="w-100 clearfix d-md-none" />
                         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                             <h6 class="text-uppercase mb-4 font-weight-bold">Other Topic</h6>
                             <p><a class="nav-item nav-link link-body-emphasis" href="otomotif.html">Otomotif</a></p>
@@ -175,14 +186,12 @@
                             <p><a class="nav-item nav-link link-body-emphasis" href="hiburan.html">Hiburan</a></p>
                             <p><a class="nav-item nav-link link-body-emphasis" href="teknologi.html">Teknologi</a></p>
                         </div>
-                        <hr class="w-100 clearfix d-md-none"/>
                         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                             <h6 class="text-uppercase mb-4 font-weight-bold">Other Topic</h6>
                             <p><a class="nav-item nav-link link-body-emphasis" href="sepakbola.html">Sepak Bola</a></p>
                             <p><a class="nav-item nav-link link-body-emphasis" href="kesehatan.html">Kesehatan</a></p>
                             <p><a class="nav-item nav-link link-body-emphasis" href="wisata.html">Wisata</a></p>
                         </div>
-                        <hr class="w-100 clearfix d-md-none" />
                         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                             <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
                             <p><i class="fas fa-home mr-3"></i> Depok, Jawa Barat, Indonesia</p>
