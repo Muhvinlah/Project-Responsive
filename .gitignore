@@ -1,3 +1,5 @@
+.gitignore
 *.docx
 *.pdf
-img/
+node_modules
+*.zip

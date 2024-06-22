@@ -1,0 +1,30 @@
+{
+  "name": "projectresponsive",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Muhvinlah",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muhvinlah/Project-Responsive.git"
+  },
+  "keywords": [
+    "news",
+    "website"
+  ],
+  "bugs": {
+    "url": "https://github.com/Muhvinlah/Project-Responsive/issues"
+  },
+  "homepage": "https://github.com/Muhvinlah/Project-Responsive#readme",
+  "description": "",
+  "dependencies": {
+    "express-fileupload": "^1.5.0",
+    "express.js": "^1.0.0",
+    "firebase": "^10.12.2",
+    "firestore": "^1.1.6",
+    "nodemon": "^3.1.3"
+  }
+}

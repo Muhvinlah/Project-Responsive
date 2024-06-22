@@ -3,10 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Nusantara Times</title>
 
-        <script src="./color-modes/js/color-modes.js"></script>
-        <script src="./js/bootstrap.bundle.js"></script>
-        <link rel="stylesheet" href="./css/bootstrap.css">
+        <script src="color-modes/js/color-modes.js"></script>
+        <script src="js/bootstrap.bundle.js"></script>
+        <script type="module" src="js/home.js"></script>
+        <!-- <script src="index.js"></script> -->
+        <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
         <style>
             @media (max-width: 768px) {
@@ -27,7 +30,7 @@
         </style>
     </head>
     <body>
-        <div class="z-3 dropdown position-fixed bottom-0 start mb-3 ms-3 bd-mode-toggle">
+        <div class="z-3 dropdown position-fixed bottom-0 mb-3 ms-3 bd-mode-toggle">
             <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center"
                     id="bd-theme"
                     type="button"
@@ -126,6 +129,7 @@
                     <a class="nav-item nav-link link-body-emphasis" href="teknologi.html">teknologi</a>
                     <a class="nav-item nav-link link-body-emphasis" href="sepakbola.html">sepakbola</a>
                     <a class="nav-item nav-link link-body-emphasis" href="kesehatan.html">kesehatan</a>
+                    <a href="edit.html">edit</a>
                 </div>
             </div>
             <div class="border-top border-2"></div>
@@ -173,10 +177,11 @@
                     </div>
                 </div>
 
-                <div class="col-md">
-                    <article class="p-md-5 text-body-emphasis border-end">
+                <div class="col-md" id="news">
+
+                    <!-- <article class="p-md-5 text-body-emphasis border-end">
                         <img src="img/gunung.jpeg" class="img-fluid" alt="gunung">
-                        <a class="nav-item nav-link link-body-emphasis fs-1 fst-italic text-capitalize" href="berita1.html">
+                        <a class="nav-item nav-link link-body-emphasis fs-1 fst-italic text-capitalize" href="berita.html">
                             gunung ruang kembali erupsi, warga tagulandang mengungsi
                         </a>
                         <p class="text-muted my-3">
@@ -211,7 +216,7 @@
                         <p class="text-muted my-3">
                             Deputi Bidang Meteorologi Badan Meteorologi, Klimatologi, dan Geofisika (BMKG) Guswanto mengatakan, suhu panas di Indonesia disebabkan oleh posisi semu matahari yang berada dekat sekitar Khatulistiwa.
                         </p>
-                    </article>
+                    </article> -->
                 </div>
 
                 <div class="col-md-4">
@@ -219,7 +224,8 @@
                         <div class="text-capitalize">
                             <h4 class="fst-italic">trending</h4>
                             <ul class="list-unstyled">
-                                <li>    
+
+                                <!-- <li>
                                     <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
                                         <img src="img/stip.jpg" alt="stip" class="img-fluid w-50">
                                         <div class="col-lg-8">
@@ -272,7 +278,7 @@
                                             <small class="text-body-light">mei 2, 2024</small>
                                         </div>
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
