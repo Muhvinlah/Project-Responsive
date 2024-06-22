@@ -8,7 +8,6 @@
         <script src="color-modes/js/color-modes.js"></script>
         <script src="js/bootstrap.bundle.js"></script>
         <script type="module" src="js/home.js"></script>
-        <!-- <script src="index.js"></script> -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
         <style>
@@ -179,103 +178,19 @@
 
                 <div class="col-md" id="news">
 
-                    <!-- <article class="p-md-5 text-body-emphasis border-end">
-                        <img src="img/gunung.jpeg" class="img-fluid" alt="gunung">
-                        <a class="nav-item nav-link link-body-emphasis fs-1 fst-italic text-capitalize" href="berita.html">
-                            gunung ruang kembali erupsi, warga tagulandang mengungsi
-                        </a>
-                        <p class="text-muted my-3">
-                            Provinsi Sulawesi Utara kembali mengalami erupsi pada Selasa (30/4/2024) dini hari.
-                            Gunung Ruang mengelurkan material vulkanik sekitar pukul 02.35 WITA.
-                            Letusan ini mengakibatkan warga Tagulandang, Sulawesi Utara kembali mengungsi setelah sebelumnya telah kembali ke rumah.
-                        </p>
-                    </article>
-                    <article class="p-md-5 text-body-emphasis border-top border-end">
-                        <img src="img/kereta.jpg" class="img-fluid" alt="kereta">
-                        <a class="nav-item nav-link link-body-emphasis fs-1 fst-italic text-capitalize" href="#">
-                            Pengembangan Stasiun Tanah Abang Ditargetkan Rampung Akhir 2024
-                        </a>
-                        <p class="text-muted my-3">
-                            Direktur Jenderal (Dirjen) Perkeretaapian Kementerian Perhubungan (Kemenhub) Risal Wasal menyatakan, pelaksanaan fisik konstruksi pengembangan stasiun Tanah Abang ditargetkan selesai akhir tahun 2024.
-                        </p>
-                    </article>
-                    <article class="p-md-5 text-body-emphasis border-top border-end">
-                        <img src="img/tenggelam.jpg" class="img-fluid" alt="tenggelam">
-                        <a class="nav-item nav-link link-body-emphasis fs-1 fst-italic text-capitalize" href="#">
-                            Remaja yang Tenggelam di Kali Ciliwung Ditemukan Meninggal Dunia
-                        </a>
-                        <p class="text-muted my-3">
-                            MR (17), remaja yang tenggelam di Kali Ciliwung, kawasan Pejaten Timur, Pasar Minggu, Jakarta Selatan, ditemukan dalam kondisi tak bernyawa, Jumat (3/5/2024).
-                        </p>
-                    </article>
-                    <article class="p-md-5 text-body-emphasis border-top border-end">
-                        <img src="img/heatwave.jpg" class="img-fluid" alt="heatwave">
-                        <a class="nav-item nav-link link-body-emphasis fs-1 fst-italic text-capitalize" href="#">
-                            Indonesia Dilanda Suhu Panas Awal Mei 2024, Benarkah Itu “Heatwave”?
-                        </a>
-                        <p class="text-muted my-3">
-                            Deputi Bidang Meteorologi Badan Meteorologi, Klimatologi, dan Geofisika (BMKG) Guswanto mengatakan, suhu panas di Indonesia disebabkan oleh posisi semu matahari yang berada dekat sekitar Khatulistiwa.
-                        </p>
-                    </article> -->
                 </div>
 
                 <div class="col-md-4">
                     <div class="sticky-top pt-5">                  
                         <div class="text-capitalize">
                             <h4 class="fst-italic">trending</h4>
-                            <ul class="list-unstyled">
-
+                            <ul class="list-unstyled" id="trending">
                                 <!-- <li>
                                     <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
                                         <img src="img/stip.jpg" alt="stip" class="img-fluid w-50">
                                         <div class="col-lg-8">
                                             <h6 class="mb-0">Pengawasan di STIP Dipertanyakan usai Taruna Tewas</h6>
                                             <small class="text-body-light">maret 29, 2024</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                                        <img src="img/mahkamah.jpg" alt="mahkamah" class="img-fluid w-50">
-                                        <div class="col-lg-8">
-                                            <h6 class="mb-0">Hakim MK Cecar KPU RI Soal Ubah Aturan Tenggat Waktu Rekapitulasi Suara Pileg</h6>
-                                            <small class="text-body-light">maret 29, 2024</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                                        <img src="img/nikah.jpg" alt="nikah" class="img-fluid w-50">
-                                        <div class="col-lg-8">
-                                            <h6 class="mb-0">Suami di Cianjur Baru Tahu Istrinya Ternyata Laki-laki Usai 12 Hari Menikah</h6>
-                                            <small class="text-body-light">maret 30, 2024</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>    
-                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                                        <img src="img/macet.jpg" alt="macet" class="img-fluid w-50">
-                                        <div class="col-lg-8">
-                                            <h6 class="mb-0">DPRD DKI Jakarta Minta Pembatasan Kendaraan Dikaji Mendalam</h6>
-                                            <small class="text-body-light">maret 30, 2024</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                                        <img src="img/atlet.jpeg" alt="atlet" class="img-fluid w-50">
-                                        <div class="col-lg-8">
-                                            <h6 class="mb-0">Apresiasi untuk Perjuangan Tim Thomas-Uber Indonesia</h6>
-                                            <small class="text-body-light">mei 1, 2024</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                                        <img src="img/ganjilgenap.jpeg" alt="ganjilgenap" class="img-fluid w-50">
-                                        <div class="col-lg-8">
-                                            <h6 class="mb-0">28 Akses Gerbang Tol yang Terkena Ganjil Genap Jakarta</h6>
-                                            <small class="text-body-light">mei 2, 2024</small>
                                         </div>
                                     </a>
                                 </li> -->
@@ -293,7 +208,7 @@
                         <div class="row">
                             <div class="col-md-3 mx-auto mt-3">
                                 <h5 class="text-uppercase mb-4 fw-bold">
-                                    Nusantara Times
+                                    nusantara times
                                 </h5>
                                 <p>Dapatkan berita menarik dan up to date dengan terus mengikuti berita berita kami</p>
                             </div>
@@ -322,7 +237,7 @@
                         <div class="row d-flex align-items-center">
                             <div class="col-md-7 col-lg-8 text-center text-md-start">
                                 <div class="p-3">
-                                    © 2024 Copyright : Nusantara Times
+                                    ©Copyright 2024 Nusantara Times. All Rights Reserved.
                                 </div>
                             </div>
                             <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
