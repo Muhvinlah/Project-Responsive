@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Nusantara Times: News Editor</title>
 
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <style>
-        .blog{
+        .blog {
             width: 70vw;
             min-width: 400px;
             height: 100px;
@@ -16,20 +17,21 @@
             padding: 50px 0;
         }
 
-        textarea::-webkit-scrollbar{
+        textarea::-webkit-scrollbar {
             width: 10px;
         }
 
-        textarea::-webkit-scrollbar-thumb{
+        textarea::-webkit-scrollbar-thumb {
             background: rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
 
         .title,
-        .article{
+        .article {
             width: 100%;
             min-height: 100px;
             height: auto;
+            margin-bottom: 3rem;
             outline: none;
             font-size: 50px;
             font-weight: 600;
@@ -41,11 +43,11 @@
         }
 
         .title::placeholder,
-        .article::placeholder{
+        .article::placeholder {
             color: #2d2d2d;
         }
 
-        .article{
+        .article {
             height: 500px;
             font-size: 20px;
             margin-top: 20px;
@@ -55,7 +57,7 @@
             white-space: pre-wrap;
         }
 
-        .blog-options{
+        .blog-options {
             position: fixed;
             bottom: 0;
             left: 0;
@@ -67,19 +69,274 @@
             justify-content: center;
             align-items: center;
         }
+
+        .gambar {
+            max-width: 15rem;
+        }
+
+        .div-gambar {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+
+        #deleteBtn{
+            background-color: red;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <form id="newsForm">
+            <input type="text" class="title" id="title" placeholder="News Title..."></input>
+            <input type="text" style="display: none;" class="title" id="uid" placeholder="uid"></input>
+            <div class="div-gambar">
+                <img class="gambar" id="gambar-artikel"
+                    src=""
+                    alt="">
+                <figcaption>Gambar artikel saat ini</figcaption>
+            </div>
             <input type="file" accept="image/*" id="newsBanner">
-            <textarea type="text" class="title" id="title" placeholder="News Title..."></textarea>
             <textarea type="text" class="article" id="article" placeholder="News Content..."></textarea>
             <button type="submit" id="publishBtn" class="btn btn-primary publish-btn">publish</button>
+            <button type="submit" id="deleteBtn" class="btn btn-primary publish-btn">delete</button>
         </form>
     </div>
 
+
+
+
+
+    <!-- HIRAUKAN!!!!!!!!!!!!! -->
+    <!-- <input type="text" id="artikel-judul" placeholder="judul">
+    <input type="file" id="artikel-gambar" accept=".jpg, .jpeg, .png, .gif">
+    <textarea name="content" id="artikel-konten" placeholder="konten"></textarea>
+    <button id="artikel-upload">submit</button> -->
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+        import { getStorage, uploadBytes, getDownloadURL, ref as storageRef, deleteObject } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+        import { getDatabase, set, get, update, remove, push, ref as databaseRef, child, onValue, orderByChild } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDbYkkj_IbU28j7Uk5tL41K9rm2kN2FkHo",
+            authDomain: "news-bbba6.firebaseapp.com",
+            databaseURL: "https://news-bbba6-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "news-bbba6",
+            storageBucket: "news-bbba6.appspot.com",
+            messagingSenderId: "399301560110",
+            appId: "1:399301560110:web:92cc3ca5c9633224bfdcbf",
+            measurementId: "G-P0DX3EGF9Y"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        const storage = getStorage(app);
+        const db = getDatabase();
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const inputJudul = document.querySelector("#artikel-judul");
+            const inputGambar = document.querySelector("#artikel-gambar");
+            const inputKonten = document.querySelector("#artikel-konten");
+
+            const buttonPublish = document.querySelector("#artikel-upload");
+
+            const buatArtikel = async () => {
+                const imageFile = inputGambar.files[0];
+
+                const storageReference = storageRef(storage, `Images/${imageFile.name}`)
+                await uploadBytes(storageReference, imageFile)
+
+                const imageURL = await getDownloadURL(storageReference);
+
+                await set(push(databaseRef(db, `Articles`)), {
+                    ArticleContent: inputKonten.value,
+                    ArticleImage: imageURL,
+                    ArticleTitle: inputJudul.value,
+                    CreatedAt: new Date().toISOString()
+                })
+                    .then(() => {
+                        alert("Artikel berhasil dipublikasikan!");
+                    })
+                    .catch((error) => {
+                        alert("Gagal mempublikasikan artikel!");
+                    })
+            }
+
+            buttonPublish.addEventListener("click", (event) => {
+                event.preventDefault();
+                buatArtikel();
+            })
+        })
+
+
+
+
+        // PROSES MENAMPILKAN DATA ARTIKEL SAAT INI UNTUK DIGANTI DI HALAMAN EDIT ARTIKEL
+        document.addEventListener("DOMContentLoaded", () => {
+            // Membuat fungsi untuk mendapatkan query dari URL
+            function getQueryParam(param) {
+                // Menyimpan URL saat ini ke dalam variabel
+                const urlParams = new URLSearchParams(window.location.search);
+
+                // Memberikan value dari function getQueryParam menjadi URL yang sedang dibuka
+                return urlParams.get(param);
+            }
+
+            // Mendapatkan UID dari URL
+            const uid = getQueryParam("uid");
+
+            // Membuat variabel untuk mendapatkan bagian input dari HTML
+            const displayCurrentThumbnailImage = document.querySelector("#gambar-artikel");
+            const articleUIDInput = document.querySelector("#uid");
+            const articleTitleInput = document.querySelector("#title");
+            const articleContentInput = document.querySelector("#article");
+
+            // Variabel untuk mendapatkan bagian input gambar artikel
+            const articleImageInput = document.querySelector("#newsBanner");
+
+            // Membuat variabel untuk mendapatkan tombol update artikel dan tombol delete artikel
+            const updateArticleButton = document.querySelector("#publishBtn");
+            const deleteArticleButton = document.querySelector("#deleteBtn");
+
+            // Pengkondisian untuk menampilkan artikel yang sedang dibuka berdasarkan UID nya
+            if (uid) {
+                // Mendapatkan referensi artikel berdasarkan UID di dalam tabel Articles
+                const articleRef = databaseRef(db, `Articles/${uid}`);
+
+                // Fungsi bawaan Firebase untuk mendapatkan data
+                get(articleRef).then((snapshot) => {
+                    // Pengkondisian untuk menampilkan artikel jika UID yang diinginkan ada di tabel
+                    if (snapshot.exists()) {
+                        // Mengambil data artikel dari database
+                        const articleData = snapshot.val();
+
+                        displayCurrentThumbnailImage.src = articleData.ArticleImage;
+
+                        articleUIDInput.value = uid;
+                        articleTitleInput.value = articleData.ArticleTitle;
+                        articleContentInput.value = articleData.ArticleContent;
+                        articleData.ArticleContent;
+                    } else {
+                        console.log("No data available");
+                    }
+                }).catch((error) => {
+                    console.log("Error getting data: ", error);
+                });
+            } else {
+                console.log("No UID provided");
+            }
+
+            function updateArticle() {
+                // Mendapatkan file gambar yang diunggah, jika ada
+                const imageFile = articleImageInput.files[0];
+
+                // Membuat referensi ke data artikel di Firebase
+                const articleRef = databaseRef(db, `Articles/${articleUIDInput.value}`);
+
+                // Fungsi untuk mengupdate data di database
+                function updateArticleData(imageURL) {
+                    update(articleRef, {
+                        ArticleTitle: articleTitleInput.value,
+                        ArticleContent: articleContentInput.value,
+                        ArticleImage: imageURL || displayCurrentThumbnailImage.src
+                    }).then(() => {
+                        alert("Article updated successfully!");
+                        window.location.reload();
+                    }).catch((error) => {
+                        console.error("Error updating article: ", error);
+                    });
+                }
+
+                // Jika ada gambar baru, unggah ke Firebase Storage
+                if (imageFile) {
+                    const storageImageRef = storageRef(storage, `Images/${imageFile.name}`);
+                    uploadBytes(storageImageRef, imageFile).then(() => {
+                        return getDownloadURL(storageImageRef);
+                    }).then((imageURL) => {
+                        updateArticleData(imageURL);
+                    }).catch((error) => {
+                        console.error("Error uploading image: ", error);
+                    });
+                } else {
+                    // Jika tidak ada gambar baru, langsung perbarui data
+                    updateArticleData();
+                }
+            }
+
+            // Menambahkan event listener ke tombol update
+            updateArticleButton.addEventListener("click", (event) => {
+                event.preventDefault();
+                updateArticle();
+            });
+
+            // Fungsi untuk menghapus artikel
+            function deleteArticle() {
+                // Ambil referensi ke data artikel yang akan dihapus
+                const articleRef = databaseRef(db, "Articles/" + articleUIDInput.value);
+
+                // Ambil data artikel terlebih dahulu untuk mendapatkan URL gambar
+                get(articleRef).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const articleData = snapshot.val();
+                        const imageURL = articleData.ArticleImage;
+
+                        // Hapus data artikel dari database
+                        remove(articleRef).then(() => {
+                            alert("Article deleted successfully!");
+
+                            // Jika gambar ada, hapus dari Firebase Storage
+                            if (imageURL) {
+                                // Ekstrak nama file dari URL gambar
+                                const imageName = decodeURIComponent(imageURL.split('/o/')[1].split('?')[0]);
+
+                                // Referensi ke gambar di Firebase Storage
+                                const storageImageRef = storageRef(storage, imageName);
+
+                                // Hapus gambar dari Firebase Storage
+                                deleteObject(storageImageRef).then(() => {
+                                    console.log("Image deleted successfully from storage.");
+                                }).catch((error) => {
+                                    console.error("Error deleting image from storage: ", error);
+                                });
+                            }
+
+                            window.location.reload();
+                        }).catch((error) => {
+                            console.error("Error deleting article: ", error);
+                            alert("Failed to delete article. Please try again.");
+                        });
+                    } else {
+                        console.log("No data available for the given UID.");
+                        alert("Article not found. Please check the UID.");
+                    }
+                }).catch((error) => {
+                    console.error("Error retrieving article: ", error);
+                });
+            }
+
+            // Tambahkan event listener ke tombol delete
+            deleteArticleButton.addEventListener("click", (event) => {
+                event.preventDefault();
+                const confirmDelete = confirm("Are you sure you want to delete this article? This process can't be undone.");
+                if (confirmDelete) {
+                    deleteArticle();
+                }
+            });
+        })
+    </script>
+
     <script type="module" th:src="@{/js/edit.js}"></script>
 </body>
+
 </html>
