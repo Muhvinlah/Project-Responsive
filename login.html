@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nusantara Times: Login</title>
 
-        <script src="color-modes/js/color-modes.js"></script>
-        <script src="js/bootstrap.bundle.js"></script>
+        <script th:src="@{/color-modes/js/color-modes.js}"></script>
+        <script th:src="@{/js/bootstrap.bundle.js}"></script>
+        <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
         <style>
@@ -156,6 +157,8 @@
             </ul>
         </div>
 
+        <a th:href="@{/admin}" id="adminPage" hidden>admin</a>
+
         <div class="wrapper">
             <div class="logo">
                 <img src="img/NTlogo1.png" alt="Logo">
@@ -178,7 +181,7 @@
                 <button id="login-btn" class="btn mt-3">Login</button>
             </form>
             <div class="text-center fs-6">
-                <span>Don't have an account? </span><a href="register.html">Sign Up</a>
+                <span>Don't have an account? </span><a th:href="@{register}">Sign Up</a>
             </div>
         </div>
         <script type="module">
@@ -231,7 +234,7 @@
                     const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
                     const user = userCredential.user;
                     alert("Account successfully logged in");
-                    window.location.href = "admin.html";
+                    window.location.href = document.getElementById("adminPage").href;
                 } catch (error) {
                     const errorCode = error.code;
                     const errorMessage = error.message;

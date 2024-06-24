@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Nusantara Times</title>
 
-        <script src="color-modes/js/color-modes.js"></script>
-        <script src="js/bootstrap.bundle.js"></script>
-        <script type="module" src="js/home.js"></script>
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <script th:src="@{/color-modes/js/color-modes.js}"></script>
+        <script th:src="@{/js/bootstrap.bundle.js}"></script>
+        <script type="module" th:src="@{/js/home.js}"></script>
+        <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
         <style>
             @media (max-width: 768px) {
@@ -78,7 +78,7 @@
             <header class="border-bottom border-2 py-3">
                 <div class="flex-row d-flex flex-wrap align-items-center justify-content-between">
                     <div class="p-3 clearfix signin">
-                        <a class="btn btn-primary" href="login.html">Sign In</a>
+                        <a class="btn btn-primary" th:href="@{/login}">Sign In</a>
                     </div>
                     <div class="flex-fill text-center pt-3 clearfix date">
                         <p class="text-capitalize lead" id="date"></p>
@@ -97,7 +97,7 @@
                         </script>
                     </div>
                     <div class="flex-grow-1 text-center w-25">
-                        <a href="index.html">
+                        <a th:href="@{/home}">
                             <img src="img/NTLogo.png" alt="logo" class="img-fluid">
                         </a>
                     </div>
@@ -128,7 +128,7 @@
                     <a class="nav-item nav-link link-body-emphasis" href="teknologi.html">teknologi</a>
                     <a class="nav-item nav-link link-body-emphasis" href="sepakbola.html">sepakbola</a>
                     <a class="nav-item nav-link link-body-emphasis" href="kesehatan.html">kesehatan</a>
-                    <a href="edit.html">edit</a>
+                    <a class="nav-item nav-link link-body-emphasis" th:href="@{/upload}">edit</a>
                 </div>
             </div>
             <div class="border-top border-2"></div>
@@ -177,7 +177,6 @@
                 </div>
 
                 <div class="col-md" id="news">
-
                 </div>
 
                 <div class="col-md-4">

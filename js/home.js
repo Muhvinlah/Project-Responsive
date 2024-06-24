@@ -49,7 +49,12 @@ get(child(dbRef, "News")).then((snapshot) => {
       dateElement.textContent = `Published on: ${CreatedAt}`;
 
       const contentElement = document.createElement('p');
-      contentElement.textContent = ArticleContent;
+      const maxLength = 100; // Set the maximum length for the article content
+      contentElement.textContent = ArticleContent.length > maxLength 
+        ? ArticleContent.substring(0, maxLength) + '...' 
+        : ArticleContent;
+      contentElement.classList.add('my-3');
+      contentElement.classList.add('text-muted');
 
       // Append elements to the news container
       articleDiv.appendChild(imageElement);
@@ -62,6 +67,6 @@ get(child(dbRef, "News")).then((snapshot) => {
     } else {
       console.log("No data available");
     }
-  }).catch((error) => {
-    console.error(error);
-  });
+}).catch((error) => {
+  console.error(error);
+});

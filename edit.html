@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Nusantara Times: News Editor</title>
 
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
     <style>
         .blog{
             width: 70vw;
@@ -80,6 +80,6 @@
         </form>
     </div>
 
-    <script type="module" src="js/edit.js"></script>
+    <script type="module" th:src="@{/js/edit.js}"></script>
 </body>
 </html>

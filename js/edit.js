@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getDatabase, set, get, update, remove, push, ref as databaseRef, child, onValue, orderByChild } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
-// import { getFirestore, collection, getDocs, doc, addDoc, deleteDoc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
    apiKey: "AIzaSyAvOM6KwAcJBjj7LGOY9hlPditaJ3gAKnQ",
@@ -16,35 +15,34 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
-// const firestore = getFirestore(app);
 const storage = getStorage(app);
 
 // PROSES MEMBUAT ARTIKEL
 document.addEventListener("DOMContentLoaded", () => {
-   // Mendapatkan elemen input
-   const articleTitleInput = document.querySelector("#title");
-   const articleContentInput = document.querySelector("#article");
-   const articleImageInput = document.querySelector("#newsBanner");
+    // Mendapatkan elemen input
+    const articleTitleInput = document.querySelector("#title");
+    const articleContentInput = document.querySelector("#article");
+    const articleImageInput = document.querySelector("#newsBanner");
 
-   // Tombol submit
-   const createArticleBtn = document.querySelector("#publishBtn");
+    // Tombol submit
+    const createArticleBtn = document.querySelector("#publishBtn");
  
-   // Inisialisasi fungsi untuk membuat artikel
-   const createArticle = async () => {
-      // Mendapatkan file gambar yang diunggah
-      const imageFile = articleImageInput.files[0];
-      // Upload gambar ke Firebase Storage
-      const storageReference = storageRef(storage, 'images/' + articleTitleInput);
-      await uploadBytes(storageReference, imageFile);
-
-      // Mendapatkan URL gambar yang diunggah
-      const imageURL = await getDownloadURL(storageReference);
+    // Inisialisasi fungsi untuk membuat artikel
+    const createArticle = async () => {
+       // Mendapatkan file gambar yang diunggah
+       const imageFile = articleImageInput.files[0];
+       // Upload gambar ke Firebase Storage
+       const storageReference = storageRef(storage, 'Images/' + articleTitleInput);
+       await uploadBytes(storageReference, imageFile);
+ 
+       // Mendapatkan URL gambar yang diunggah
+       const imageURL = await getDownloadURL(storageReference);
  
        // Jika input tidak terisi maka tampilkan pesan error 
-      if (!imageFile || !articleTitleInput.value || !articleContentInput.value) {
-         alert("Please fill out all fields");
-         return;
-      }
+       if (!imageFile || !articleTitleInput.value || !articleContentInput.value) {
+          alert("Please fill out all fields");
+          return;
+       }
  
        // Menyimpan data artikel ke Firebase Realtime Database
        await set(push(databaseRef(db, "News")), {
