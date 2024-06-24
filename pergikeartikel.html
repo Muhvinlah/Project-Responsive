@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="artikel-container"></div>
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+        import { getStorage, uploadBytes, getDownloadURL, ref as storageRef, deleteObject } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+        import { getDatabase, set, get, update, remove, push, ref as databaseRef, child, onValue, orderByChild } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDbYkkj_IbU28j7Uk5tL41K9rm2kN2FkHo",
+            authDomain: "news-bbba6.firebaseapp.com",
+            databaseURL: "https://news-bbba6-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "news-bbba6",
+            storageBucket: "news-bbba6.appspot.com",
+            messagingSenderId: "399301560110",
+            appId: "1:399301560110:web:92cc3ca5c9633224bfdcbf",
+            measurementId: "G-P0DX3EGF9Y"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        const storage = getStorage(app);
+        const db = getDatabase();
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Mendapatkan referensi tabel yang diinginkan dari database
+            const articleRef = databaseRef(db, "Articles");
+
+            // Mendapatkan elemen HTML yang akan dimanipulasi
+            const displayArticleContainer = document.querySelector("#artikel-container");
+
+            // Mendapatkan data artikel untuk ditampilkan di halaman home
+            onValue(articleRef, (snapshot) => {
+                // Mendapatkan data article
+                const data = snapshot.val();
+
+                // Menghapus konten yang ada (untuk mencegah duplikasi)
+                displayArticleContainer.innerHTML = "";
+
+                const maxWords = 22; // Jumlah kata maksimum yang diinginkan
+
+                // Function to get the first few words
+                function getFirstWords(text, maxWords) {
+                    // Split teks menjadi kata-kata
+                    const words = text.split(/\s+/);
+
+                    // Ambil bagian pertama dari array kata-kata sesuai dengan jumlah maksimum kata
+                    const truncatedWords = words.slice(0, maxWords);
+
+                    // Gabungkan kembali menjadi kalimat
+                    return truncatedWords.join(' ');
+                }
+
+                // Melakukan iterasi setiap entri di dalam data 
+                for (const uid in data) {
+                    const articleData = data[uid];
+
+                    const articleCard = document.createElement("div");
+                    articleCard.className = `itemBox`;
+
+                    // Memotong konten artikel menjadi beberapa kalimat pertama
+                    const truncatedContent = getFirstWords(articleData.ArticleContent, maxWords);
+
+                    // Menampilkan elemen HTML
+                    articleCard.innerHTML = `
+                <a href="edit.html?uid=${uid}" class="hover:border-b hover:border-red-500 flex flex-col gap-2 py-2">
+                    <img src="${articleData.ArticleImage}" alt="" style="height: 5rem;" class="rounded-md object-cover w-full h-56">
+                    <h1 class="text-lg font-bold tracking-tight pt-2">${articleData.ArticleTitle}</h1>
+                    <div class="flex flex-row justify-between">
+                        <p class="text-sm text-gray-600 italic">${new Date(articleData.CreatedAt).toLocaleDateString()}</p>
+                    </div>
+                    <p class="text-sm py-2 text-gray-700">${truncatedContent}...</p>
+                </a>
+            `;
+
+                    // Menambahkan elemen HTML ke dalam div parents
+                    displayArticleContainer.appendChild(articleCard);
+                }
+            }, (errorObject) => {
+                console.log("Error getting data: " + errorObject.code);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
